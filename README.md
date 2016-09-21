@@ -2,6 +2,8 @@
 
 Unimation is an animation toolbox for Unity 2D and 3D games. The aim is to provide simple access to common animation requirements such as scaling, moving and rotating to all `GameObjects`.
 
+For an explanation of Unimation and why it was created, as well as some sample GIFs, check out [this blog post](https://kylewbanks.com/blog/easier-2d-and-3d-unity-animations-using-unimation).
+
 ## Features
 - Several built-in animations such as scaling, moving, and rotating `GameObjects`.
 - Defining animation durations.
