@@ -13,14 +13,12 @@ For an explanation of Unimation and why it was created, as well as some sample G
  
 ## Installation
 
-Unimation can be installed by either cloning the Unimation repository into your project, like so:
+Unimation can be installed by either [downloading Unimation as a ZIP](https://github.com/KyleBanks/unimation/archive/master.zip) and unzipping in your project, or by cloning the Unimation repository into your project, like so:
 
 ```sh
 cd Assets/
 git clone git@github.com:KyleBanks/unimation.git
 ```
-
-Or by simply [downloading Unimation as a ZIP](https://github.com/KyleBanks/unimation/archive/master.zip) and unzipping in your project.
 
 ## Usage
 
@@ -30,7 +28,7 @@ All Unimation animations can be run in one of two ways. The easiest way is to us
 Unimation.Animate.ScaleTo(gameObject, scale, duration);
 ```
 
-The preferred way to use Unimation however, is to have your scripts extend `Unimation.Behaviour` (rather than `MonoBehaviour`), which adds access to the animation methods on the script itself:
+However the preferred way to use Unimation, is to have your scripts extend `Unimation.Behaviour` (rather than `MonoBehaviour`), which adds access to the animation methods on the script itself:
 
 ```cs
 public class MyScript : Unimation.Behaviour {
@@ -44,7 +42,7 @@ public class MyScript : Unimation.Behaviour {
 
 ### Looping
 
-By default, animations do not loop - they animate to the desired state and stop. However, they can be made to loop a desired number of times by providing a positive integer as the loop parameter to an animation, or by using `Unimation.Animation.LoopInfinite` to have the animation loop infinitely.
+By default, animations do not loop - they animate to the desired state and are marked **complete**. However, they can be set to loop a desired number of times by providing a positive integer as the loop parameter to an animation, or by using `Unimation.Animation.LoopInfinite` to have the animation loop infinitely.
 
 When looping, the initial state of the animating property is captured and the animation animates back to this state before animating again. 
 
