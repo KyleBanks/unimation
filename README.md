@@ -50,7 +50,7 @@ All Unimation animations provide common customization, such as the `Duration`, `
 - `scale` (`Vector3`) - The scale to animate to.
 - `duration` (`float`) - The duration of the animation, in seconds.
 - `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
-- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation.
+- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
 
 **Example**
 ```
@@ -67,6 +67,50 @@ public class MyScript : Unimation.Behaviour {
 Unimation.Animate.ScaleTo(this.gameObject, Vector3.zero, 3.0f, Unimation.Mode.Linear, 3);
 ```
 
+### ScaleIn
+
+`ScaleIn` animates the scale of the `GameObject` to `(1, 1, 1)`.
+
+- `duration` (`float`) - The duration of the animation, in seconds.
+- `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
+ 
+**Example**
+```
+// Subclassing
+public class MyScript : Unimation.Behaviour {
+  
+  void Start() {
+    ScaleIn(3.0f, Unimation.Mode.Linear);
+  }
+  
+}
+
+// Static
+Unimation.Animate.ScaleIn(3.0f, Unimation.Mode.Linear);
+```
+
+### ScaleOut
+
+`ScaleOut` animates the scale of the `GameObject` to `(0, 0, 0)`.
+
+- `duration` (`float`) - The duration of the animation, in seconds.
+- `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
+
+**Example**
+```
+// Subclassing
+public class MyScript : Unimation.Behaviour {
+  
+  void Start() {
+    ScaleOut(3.0f, Unimation.Mode.Linear);
+  }
+  
+}
+
+// Static
+Unimation.Animate.ScaleOut(3.0f, Unimation.Mode.Linear);
+```
+
 ### MoveTo
 
 `MoveTo` animates the position of the `GameObject` to the desired location.
@@ -74,7 +118,7 @@ Unimation.Animate.ScaleTo(this.gameObject, Vector3.zero, 3.0f, Unimation.Mode.Li
 - `position` (`Vector3`) - The position to animate to.
 - `duration` (`float`) - The duration of the animation, in seconds.
 - `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
-- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation.
+- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
 
 **Example**
 ```
@@ -90,3 +134,5 @@ public class MyScript : Unimation.Behaviour {
 // Static
 Unimation.Animate.MoveTo(this.gameObject, new Vector3(10f, 8f, 6f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
 ```
+
+### RotateTo
