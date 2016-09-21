@@ -58,11 +58,35 @@ All Unimation animations provide common customization, such as the `Duration`, `
 public class MyScript : Unimation.Behaviour {
   
   void Start() {
-    ScaleTo(Vector3.zero, 3.0f, Unimation.Mode.Linear, 3);
+    ScaleTo(Vector3.zero, 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
   }
   
 }
 
 // Static
 Unimation.Animate.ScaleTo(this.gameObject, Vector3.zero, 3.0f, Unimation.Mode.Linear, 3);
+```
+
+### MoveTo
+
+`MoveTo` animates the position of the `GameObject` to the desired location.
+
+- `position` (`Vector3`) - The position to animate to.
+- `duration` (`float`) - The duration of the animation, in seconds.
+- `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
+- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation.
+
+**Example**
+```
+// Subclassing
+public class MyScript : Unimation.Behaviour {
+  
+  void Start() {
+    MoveTo(new Vector3(new Vector3(10f, 8f, 6f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
+  }
+  
+}
+
+// Static
+Unimation.Animate.MoveTo(this.gameObject, new Vector3(10f, 8f, 6f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
 ```
