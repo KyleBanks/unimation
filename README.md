@@ -136,3 +136,25 @@ Unimation.Animate.MoveTo(this.gameObject, new Vector3(10f, 8f, 6f), 3.0f, Unimat
 ```
 
 ### RotateTo
+
+`RotateTo` animates the rotation of the `GameObject` to the desired rotation in degrees.
+
+- `degrees` (`Vector3`) - The degrees to animate to.
+- `duration` (`float`) - The duration of the animation, in seconds.
+- `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
+- `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
+
+**Example**
+```
+// Subclassing
+public class MyScript : Unimation.Behaviour {
+  
+  void Start() {
+    RotateTo(new Vector3(new Vector3(45f, 45f, 0f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
+  }
+  
+}
+
+// Static
+Unimation.Animate.RotateTo(this.gameObject, new Vector3(45f, 45f, 0f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
+```
