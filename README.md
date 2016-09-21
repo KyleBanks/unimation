@@ -6,9 +6,10 @@ For an explanation of Unimation and why it was created, as well as some sample G
 
 ## Features
 - Several built-in animations such as scaling, moving, and rotating `GameObjects`.
-- Defining animation durations.
+- Custom animation durations.
+- Looping animations for a set number of iterations, or infinite looping.
 - Animation interpolators, providing simple access to linear, accelerated, and decelerated animations. (*Coming soon: Only `Linear` is supported at the moment.*)
-- Full support for Free and Pro versions of Unity.
+- Fully functional on Free and Pro versions of Unity.
  
 ## Installation
 
