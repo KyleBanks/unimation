@@ -14,7 +14,7 @@ For an explanation of Unimation and why it was created, as well as some sample G
 
 Unimation can be installed by either cloning the Unimation repository into your project, like so:
 
-```
+```sh
 cd Assets/
 git clone git@github.com:KyleBanks/unimation.git
 ```
@@ -25,13 +25,13 @@ Or by simply [downloading Unimation as a ZIP](https://github.com/KyleBanks/unima
 
 All Unimation animations can be run in one of two ways. The easiest way is to use the static `Unimation.Animate` methods:
 
-```
+```cs
 Unimation.Animate.ScaleTo(gameObject, scale, duration);
 ```
 
 The preferred way to use Unimation however, is to have your scripts extend `Unimation.Behaviour` (rather than `MonoBehaviour`), which adds access to the animation methods on the script itself:
 
-```
+```cs
 public class MyScript : Unimation.Behaviour {
 
   void Start() {
@@ -97,7 +97,7 @@ All Unimation animations provide common customization, such as the `Duration`, `
 - `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
 
 **Example**
-```
+```cs
 // Subclassing
 public class MyScript : Unimation.Behaviour {
   
@@ -119,7 +119,7 @@ Unimation.Animate.ScaleTo(this.gameObject, Vector3.zero, 3.0f, Unimation.Mode.Li
 - `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
  
 **Example**
-```
+```cs
 // Subclassing
 public class MyScript : Unimation.Behaviour {
   
@@ -141,7 +141,7 @@ Unimation.Animate.ScaleIn(3.0f, Unimation.Mode.Linear);
 - `animationMode` (`Unimation.Mode`) [*Default:* `Unimation.Mode.Linear`] - The interpolator type to use, defaults to `Linear`.
 
 **Example**
-```
+```cs
 // Subclassing
 public class MyScript : Unimation.Behaviour {
   
@@ -165,7 +165,8 @@ Unimation.Animate.ScaleOut(3.0f, Unimation.Mode.Linear);
 - `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
 
 **Example**
-```
+
+```cs
 // Subclassing
 public class MyScript : Unimation.Behaviour {
   
@@ -189,7 +190,8 @@ Unimation.Animate.MoveTo(this.gameObject, new Vector3(10f, 8f, 6f), 3.0f, Unimat
 - `loopCount` (`int`) [*Default:* `0`] - The number of times to loop the animation, defaults to `0`.
 
 **Example**
-```
+
+```cs
 // Subclassing
 public class MyScript : Unimation.Behaviour {
   
