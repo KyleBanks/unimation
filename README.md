@@ -63,7 +63,23 @@ Interpolators define the style and easing of the animation.
 - `Accelerate` animations start slowly, and speed up as the animation progresses.
 - `Decelerate` animations start quickly, and slow down as the animation progresses.
 
-### Completion
+### Animation State
+
+All animation methods return a `Unimation.Animation` subclass of the appropriate type. For instance, `ScaleTo` returns a `ScaleTo` object.
+
+You can use the returned animation object to check on the status of the animation using the following methods and properties:
+
+#### GetCompletionPercentage 
+
+Returns a `float` in the range of `0.0f` and `1.0f` indicating what percentage of the animation (in the current loop) has completed. For instance, calling `GetCompletionPercentage` on an animation with a duration of `4f` (four seconds) after two seconds would return `0.5f.
+
+#### GetRemainingPercentage
+
+Returns a `float` in the range of `0.0f` and `1.0f` indicating what percentage of the animation (in the current loop) is remaining. This is the inverse of `GetCompletionPercentage`.
+
+#### Animation.complete
+
+Each `Unimation.Animation` contains a `bool complete` property that is `true` when all loops (if any) of the animation have been completed.
 
 ## Animations
 
