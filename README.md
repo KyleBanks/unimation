@@ -5,7 +5,7 @@ Unimation is an animation toolbox for Unity 2D and 3D games. The aim is to provi
 ## Features
 - Several built-in animations such as scaling, moving, and rotating `GameObjects`.
 - Defining animation durations.
-- Animation interpolators, providing simple access to linear, accelerated, and decelerated animations.
+- Animation interpolators, providing simple access to linear, accelerated, and decelerated animations. (*Coming soon: Only `Linear` is supported at the moment.*)
 - Full support for Free and Pro versions of Unity.
  
 ## Installation
@@ -38,6 +38,32 @@ public class MyScript : Unimation.Behaviour {
 
 }
 ```
+
+### Looping
+
+By default, animations do not loop - they animate to the desired state and stop. However, they can be made to loop a desired number of times by providing a positive integer as the loop parameter to an animation, or by using `Unimation.Animation.LoopInfinite` to have the animation loop infinitely.
+
+When looping, the initial state of the animating property is captured and the animation animates back to this state before animating again. 
+
+For example, given a `GameObject` with an initial scale of `Vector3.one`, and animating using  `ScaleTo` with a scale of `Vector3.zero` and an initial scaleloop count of `3` and a duration of `1f` loops like so:
+
+| Time  | Scale |
+| ------------- | ------------- |
+| `0s` (Before Animation) | `Vector3.one` |
+| `1s` | `Vector3.zero` |
+| `2s` | `Vector3.one` |
+| `3s` (Animation Complete) | `Vector3.zero` |
+
+
+### Interpolators
+
+Interpolators define the style and easing of the animation.
+
+- `Linear` (**Default**) animations animate evenly from start to finish.
+- `Accelerate` animations start slowly, and speed up as the animation progresses.
+- `Decelerate` animations start quickly, and slow down as the animation progresses.
+
+### Completion
 
 ## Animations
 
@@ -157,4 +183,29 @@ public class MyScript : Unimation.Behaviour {
 
 // Static
 Unimation.Animate.RotateTo(this.gameObject, new Vector3(45f, 45f, 0f), 3.0f, Unimation.Mode.Linear, Unimation.Animation.LoopInfinite);
+```
+## License
+
+```
+MIT License
+
+Copyright (c) 2016 Kyle Banks
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
