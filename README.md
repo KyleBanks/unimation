@@ -7,6 +7,17 @@ Unimation is an animation toolbox for Unity 2D and 3D games. The aim is to provi
 - Defining animation durations.
 - Animation interpolators, providing simple access to linear, accelerated, and decelerated animations.
 - Full support for Free and Pro versions of Unity.
+ 
+## Installation
+
+Unimation can be installed by either cloning the Unimation repository into your project, like so:
+
+```
+cd Assets/
+git clone git@github.com:KyleBanks/unimation.git
+```
+
+Or by simply [downloading Unimation as a ZIP](https://github.com/KyleBanks/unimation/archive/master.zip) and unzipping in your project.
 
 ## Usage
 
